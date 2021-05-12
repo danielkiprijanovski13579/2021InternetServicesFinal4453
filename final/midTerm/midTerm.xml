@@ -1,0 +1,477 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>midTerm</name>
+    </assembly>
+    <members>
+        <member name="T:midTerm.Controllers.AnswersController">
+            <summary>
+            Answers API Controller
+            </summary>
+        </member>
+        <member name="M:midTerm.Controllers.AnswersController.#ctor(midTerm.Services.Abstractions.IAnswerService)">
+            <summary>
+             Answers Consturctor API Controller
+            </summary>
+            <param name="service">Answers Service</param>
+        </member>
+        <member name="M:midTerm.Controllers.AnswersController.Get">
+            <summary>
+            Get Item 
+            </summary>
+            <remarks>
+            Sample request:
+            
+               GET /api/Answers/
+                
+            </remarks>
+            <returns>An Base model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.AnswersController.GetById(System.Int32)">
+            <summary>
+            Get Item by Id
+            </summary>
+            <remarks>
+            Sample request:
+            
+                GET /api/Answers/{id}
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>An Extended model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.AnswersController.GetByUserId(System.Int32)">
+            <summary>
+            Get Item by UserId
+            </summary>
+            <remarks>
+            Sample request:
+            
+                GET /api/Answers/User/{id}
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>An Extended model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.AnswersController.Post(midTerm.Models.Models.Answers.AnswerCreateModel)">
+            <summary>
+            Create an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST /api/Answers
+                {
+                    "UserId": integer,
+                    "OptionId": integer
+                }
+                
+            </remarks>
+            <param name="model">model to create</param>
+            <returns>identifier of the created item</returns>
+            <response code="201">Path of the created item</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="409">The item was not created</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.AnswersController.Put(System.Int32,midTerm.Models.Models.Answers.AnswersUpdateModel)">
+            <summary>
+            Update an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT /api/Answers
+                {
+                    "Id": 1,
+                    "UserId": integer,
+                    "OptionId": integer
+                }
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <param name="model">model to create</param>
+            <returns>Answerss base model</returns>
+            <response code="200">All went well</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="409">The item was not created</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.AnswersController.Delete(System.Int32)">
+            <summary>
+            Delete an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                DELETE /api/Answers
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>bool</returns>
+            <response code="200">All went well</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="T:midTerm.Controllers.OptionsController">
+            <summary>
+            Option API Controller
+            </summary>
+        </member>
+        <member name="M:midTerm.Controllers.OptionsController.#ctor(midTerm.Services.Abstractions.IOptionService)">
+            <summary>
+             Option Consturctor API Controller
+            </summary>
+            <param name="service">Option Service</param>
+        </member>
+        <member name="M:midTerm.Controllers.OptionsController.Get">
+            <summary>
+            Get Item 
+            </summary>
+            <remarks>
+            Sample request:
+            
+                GET /api/Options/
+                
+            </remarks>
+            <returns>An Base model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.OptionsController.GetById(System.Int32)">
+            <summary>
+            Get Item by Id
+            </summary>
+            <remarks>
+            Sample request:
+            
+                GET /api/Options/{id}
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>An Extended model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.OptionsController.GetByQuestionId(System.Int32)">
+            <summary>
+            Get Item by Id
+            </summary>
+            <remarks>
+            Sample request:
+            
+                GET /api/Options/Question/{id}
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>An Extended model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.OptionsController.Post(midTerm.Models.Models.Option.OptionCreateModel)">
+            <summary>
+            Create an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST /api/Options
+                {
+                    "Text":"string",
+                    "Order": integer,
+                    "QuestionId": integer
+                }
+                
+            </remarks>
+            <param name="model">model to create</param>
+            <returns>identifier of the created item</returns>
+            <response code="201">Path of the created item</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="409">The item was not created</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.OptionsController.Put(System.Int32,midTerm.Models.Models.Option.OptionUpdateModel)">
+            <summary>
+            Update an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT /api/Match
+                {
+                    "Id": 1,
+                    "Text":"string",
+                    "Order": integer,
+                    "QuestionId": integer
+                }
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <param name="model">model to create</param>
+            <returns>Option base model</returns>
+            <response code="200">All went well</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="409">The item was not created</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.OptionsController.Delete(System.Int32)">
+            <summary>
+            Delete an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                DELETE /api/Options/1
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>bool</returns>
+            <response code="200">All went well</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="T:midTerm.Controllers.QuestionsController">
+            <summary>
+            Question API Controller
+            </summary>
+        </member>
+        <member name="M:midTerm.Controllers.QuestionsController.#ctor(midTerm.Services.Abstractions.IQuestionService)">
+            <summary>
+             Question Consturctor API Controller
+            </summary>
+            <param name="service">Question Service</param>
+        </member>
+        <member name="M:midTerm.Controllers.QuestionsController.Getall">
+            <summary>
+            Get Item 
+            </summary>
+            <remarks>
+            Sample request:
+            
+                GET /api/Quetions/
+                
+            </remarks>
+            <returns>An Base model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.QuestionsController.GetById(System.Int32)">
+            <summary>
+            Get Item by Id
+            </summary>
+            <remarks>
+            Sample request:
+            
+                GET /api/Questions/{id}
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>An Extended model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.QuestionsController.Post(midTerm.Models.Models.Question.QuestionCreateModel)">
+            <summary>
+            Create an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST /api/Question
+                {
+                    "Text":"string",
+                    "Description":"string"
+                }
+                
+            </remarks>
+            <param name="model">model to create</param>
+            <returns>identifier of the created item</returns>
+            <response code="201">Path of the created item</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="409">The item was not created</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.QuestionsController.Put(System.Int32,midTerm.Models.Models.Question.QuestionUpdateModel)">
+            <summary>
+            Update an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT /api/Match
+                {
+                    "Id": 1,
+                    "Text":"string",
+                    "Description":"string"
+                }
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <param name="model">model to create</param>
+            <returns>Question base model</returns>
+            <response code="200">All went well</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="409">The item was not created</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.QuestionsController.Delete(System.Int32)">
+            <summary>
+            Delete an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                DELETE /api/Questions
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>bool</returns>
+            <response code="200">All went well</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="T:midTerm.Controllers.SurveyUserController">
+            <summary>
+            SurveyUser API Controller
+            </summary>
+        </member>
+        <member name="M:midTerm.Controllers.SurveyUserController.#ctor(midTerm.Services.Abstractions.ISurveyUserService)">
+            <summary>
+             SurveyUser Consturctor API Controller
+            </summary>
+            <param name="service">SurveyUser Service</param>
+        </member>
+        <member name="M:midTerm.Controllers.SurveyUserController.Get">
+            <summary>
+            Get Item 
+            </summary>
+            <remarks>
+            Sample request:
+            
+                GET /api/SurveyUser/
+                
+            </remarks>
+            <returns>An Base model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.SurveyUserController.GetById(System.Int32)">
+            <summary>
+            Get Item by Id
+            </summary>
+            <remarks>
+            Sample request:
+            
+                GET /api/SurveyUser/{id}
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>An Extended model item</returns>
+            <response code="200">All went well</response>
+            <response code="204">Item had no content</response>
+            <response code="400">The Item is NULL</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.SurveyUserController.Post(midTerm.Models.Models.SurveyUser.SurveyUserCreate)">
+            <summary>
+            Create an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST /api/Match
+                {
+                    "FirstName":"string",
+                    "LastName":"string",
+                    "DoB":"2021-05-12T13:48:49.170Z",
+                    "Gender": integer,
+                    "Country":"string"
+                }
+                
+            </remarks>
+            <param name="model">model to create</param>
+            <returns>identifier of the created item</returns>
+            <response code="201">Path of the created item</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="409">The item was not created</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.SurveyUserController.Put(System.Int32,midTerm.Models.Models.SurveyUser.SurveyUserUpdate)">
+            <summary>
+            Update an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT /api/SurveyUser
+                {
+                    "FirstName":"string",
+                    "LastName":"string",
+                    "DoB":"2021-05-12T13:19:43.170Z",
+                    "Gender": integer,
+                    "Country":"string"
+                }
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <param name="model">model to create</param>
+            <returns>SurveyUser base model</returns>
+            <response code="200">All went well</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="409">The item was not created</response>
+            <response code="500">Server side error</response>
+        </member>
+        <member name="M:midTerm.Controllers.SurveyUserController.Delete(System.Int32)">
+            <summary>
+            Delete an Item
+            </summary>
+            <remarks>
+            Sample request:
+            
+                DELETE /api/SurveyUser
+                
+            </remarks>
+            <param name="id">identifier of the item</param>
+            <returns>bool</returns>
+            <response code="200">All went well</response>
+            <response code="400">The Item is NULL</response>
+            <response code="405">Method not allowed</response>
+            <response code="500">Server side error</response>
+        </member>
+    </members>
+</doc>
